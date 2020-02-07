@@ -2179,6 +2179,7 @@ public class GPClaim implements Claim {
         if (contexts == null) {
             contexts = new HashSet<>();
             contexts.add(this.getContext());
+            contexts.addAll(user.getActiveContexts());
         }
 
         if (user.hasPermission(contexts, GPPermissions.getTrustPermission(type))) {
